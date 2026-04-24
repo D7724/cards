@@ -1,6 +1,7 @@
 export class Card {
   color: Color;
   value: Value;
+  isPlayed: boolean = false;
 
   constructor(color: Color, value: Value) {
     this.color = color;
@@ -12,6 +13,14 @@ export class Card {
       return this.color > card.color;
     }
     return this.value > card.value;
+  }
+
+  public play(): void {
+    this.isPlayed = true;
+  }
+
+  public unplay(): void {
+    this.isPlayed = false;
   }
 }
 
